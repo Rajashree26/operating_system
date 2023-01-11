@@ -1,0 +1,51 @@
+#include <stdio.h>
+int main(int argc, char *argv[])
+{
+   void filecopy(FILE *, FILE *);
+   int fd = open(*fp, O_RDONLy,0)
+   char *prog = argv[0]; 
+   if (argc == 1) 
+      filecopy(0, 1);
+  else 
+      while (--argc > 0)
+         if (fd == -1) {
+            fprintf(stderr, "%s: can't open %s\n", prog, *argv);
+            return(-1);
+         } else {
+            filecopy(fp, 1);
+            fclose(fp);
+     }
+  return(0);
+}
+void filecopy(FILE *ifp, FILE *ofp)
+{
+   int c;
+   while ((c = getc(ifp)) != EOF)
+      putc(c, ofp);
+}
+Is this the write idea? It still won't compile:
+#include <stdio.h>
+int main(int argc, char *argv[])
+{
+   void filecopy(int ifp, int ifo); 
+   int fd = open(*File,O_RDONLY,0); 
+   char *prog = argv[0]; 
+   if (argc == 1) 
+      filecopy(0, 1);
+  else 
+      while (--argc > 0)
+         if ((fd == -1){
+            fprintf(stderr, "%s: can't open %s\n", prog, *argv); 
+            return(-1);
+         } else {
+            filecopy(*FILE, 1);
+            close(*FILE);
+     }
+  return(0);
+}
+void filecopy(FILE *ifp, FILE *ofp)
+{
+   int c;
+   while (c = read(fd ,&something,1)//What is &ch/&something?
+      putc(c, ofp);
+}
